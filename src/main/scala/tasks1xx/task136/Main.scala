@@ -1,6 +1,10 @@
 package tasks1xx.task136
 
-/*Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+/*
+Single Number
+
+
+Given a non-empty array of integers, every element appears twice except for one. Find that single one.
 
 Note:
 
