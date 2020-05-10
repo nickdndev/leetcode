@@ -35,7 +35,7 @@ object Main extends App {
         } else {
             val maxLeft = maxDepth(node.left)
             val maxRight = maxDepth(node.right)
-            if (maxLeft > maxRight) maxLeft + 1 else maxRight + 2
+            Math.max(maxLeft, maxRight) + 1
         }
     }
 }
