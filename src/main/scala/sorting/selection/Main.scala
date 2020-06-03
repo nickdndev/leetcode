@@ -4,19 +4,18 @@ object Main extends App {
 
   def sort(array: Array[Int]): Array[Int] = {
 
-    for (i <- array.indices) {
+    for (i <- 0 until array.length-1) {
 
       var minIdx = i
 
-      for (j <- i until array.length) {
-        if (array(j) < array(i))
+      for (j <- i+1 until array.length) {
+        if (array(j) < array(minIdx))
           minIdx = j
-
       }
 
-      val temp = array(i)
-      array(i) = array(minIdx)
-      array(minIdx) = temp
+      val temp = array(minIdx)
+      array(minIdx) = array(i)
+      array(i) = temp
 
     }
 
