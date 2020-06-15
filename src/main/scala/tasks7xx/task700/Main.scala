@@ -43,7 +43,4 @@ object Main extends App {
             else searchBST(root.right, `val`)
         }
     }
-
-    // assert(3 == numJewelsInStones("aA", "aAAbbbb"))
-
 }
