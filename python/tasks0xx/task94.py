@@ -39,4 +39,3 @@ if __name__ == "__main__":
 
     solution = Solution()
     print(solution.inorderTraversal(node_1) == [1, 3, 2])
-    print(solution.isSubsequence("axc", "ahbgdc"))
