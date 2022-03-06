@@ -1,5 +1,6 @@
 # Definition for a binary tree node.
 from typing import Optional, List
+from collections import deque
 
 
 class TreeNode:
@@ -29,6 +30,26 @@ class Solution:
         return inorder_nodes
 
 
+class SolutionStack:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+
+        stack = deque()
+        current_node = root
+        inorder_nodes = []
+
+        while stack or current_node:
+
+            if current_node:
+                stack.append(current_node)
+                current_node = current_node.left
+            else:
+                prev_node:TreeNode = stack.pop()
+                inorder_nodes.append(prev_node.val)
+                current_node = prev_node.right
+
+        return inorder_nodes
+
+
 if __name__ == "__main__":
     node_1 = TreeNode(1)
     node_2 = TreeNode(2)
@@ -38,4 +59,7 @@ if __name__ == "__main__":
     node_2.left = node_3
 
     solution = Solution()
+    print(solution.inorderTraversal(node_1) == [1, 3, 2])
+
+    solution = SolutionStack()
     print(solution.inorderTraversal(node_1) == [1, 3, 2])
